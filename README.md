@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <style>
-  root: { 
+  :root { 
     --green-color: green;
   }
   .green-box {
@@ -16,6 +16,8 @@
 <p>This is my first Website in which I am <em>developing</em> to better understand HTML/CSS/ and Javascript
   
 </p>  
+  
+  
 </body>
   
 </html>
