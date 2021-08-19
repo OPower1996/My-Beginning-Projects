@@ -1,0 +1,128 @@
+import random
+
+print("Welcome To Player vs Computter Battlezone!\n")
+
+player_name = (input("What is your name competitor?\n"))
+
+General_Grevious = "General Grevious"
+Slitheron = "SLitheron"
+PeutyPie = "PeutyPie"
+Arbitor = "Artibor"
+Jack_Frost = "Jack Frost"
+FrozenBalls = "FrozenBalls"
+EvilPrimo = "EvilPrimo"
+Underdog_Dockota = "Underdog_Dockota"
+
+AI_names = [General_Grevious, Slitheron, PeutyPie, Arbitor, Jack_Frost, FrozenBalls, EvilPrimo, Underdog_Dockota]
+
+player_points = 0
+computer_points = 0
+
+End_game_score = 3
+scores = [player_points, computer_points]
+VICTORY = 3
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+
+
+
+print("You will be facing!\n")
+computer_name = (input(random.choice(AI_names)))
+
+game_pics = [rock, paper, scissors]
+
+
+
+def play():
+    computer_choice = random.randint(0, 2)
+    computer_points = 0
+    player_points = 0
+    player_score = 0
+    computer_score = 0
+
+    scores = (computer_points, player_points)
+
+    player_choice = int(input("What do you choose, 0 for Rock, 1 for Paper, or 2 for scissors\n"))
+    print(player_choice)
+    print(player_name + " chose:")
+    print(game_pics[player_choice])
+
+    computer_choice = random.randint(0, 2)
+    print(computer_name + " chose:")
+    print(game_pics[computer_choice])
+
+
+    if computer_choice > player_choice:
+
+        print("computer wins!")
+        print(scores)
+
+    elif computer_choice == 2 and player_choice == 0:
+        print(player_name + " wins!")
+        player_score += 1
+        print("scores: ")
+        print(player_score)
+        print(computer_score)
+    elif computer_choice == 0 and player_choice == 2:
+        print(computer_name + " wins")
+        computer_points += 1
+        print("scores: ")
+        print(player_score)
+        print(computer_score)
+    elif computer_choice == player_choice:
+        print("Draw!")
+        print("scores: ")
+        print(player_score)
+        print(computer_score)
+    elif computer_choice < player_choice:
+        print(player_name + " wins!")
+        player_points += 1
+        print("scores: ")
+        print(player_score)
+        print(computer_score)
+    elif player_choice > 3:
+        print("Invalid answer, " + computer_name + " wins!")
+        computer_points += 1
+        print("scores: ")
+        print(player_score)
+        print(computer_score)
+    else:
+        print("Invalid answer," + computer_name + " wins!")
+        computer_points += 1
+        print("scores: ")
+        print(player_score)
+        print(computer_score)
+
+answer = input("Would you like to battle? Yes or No?\n").lower()
+while True:
+    answer= input("Continue? Yes or No\n").lower()
+    if answer == "yes":
+        play()
+    elif answer == "no":
+        break
+    else:
+        print("don't understand")
